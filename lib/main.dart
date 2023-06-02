@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lg_gesture_and_voice_control/splash.dart';
+
+import 'menu.dart';
 
 void main() {
   runApp(const MyWidget());
@@ -19,7 +22,7 @@ class _MyWidgetState extends State<MyWidget> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FirstPage(),
+      home: SplashScreen(),
     );
   }
 }
@@ -162,28 +165,7 @@ class _HelpPageState extends State<HelpPage> {
   }
 }
 
-/// The SettingsPage() class is used to display the Menu for the LG Gesture & Voice Control app through which,
-/// Users can set up the app to connect with their LG rig.
 
-class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
-
-  @override
-  State<SettingsPage> createState() => _SettingsPageState();
-}
-
-class _SettingsPageState extends State<SettingsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Menu'),
-        backgroundColor: Colors.black,
-        centerTitle: true,
-      ),
-    );
-  }
-}
 
 /// The BasicTile() class is a custom class which is used to display the various commands possible in the LG Gesture & Voice App.
 /// It takes all the available commands and coverts it into a tile class which is then converted into ListView at the HelpPage() class.
