@@ -42,7 +42,7 @@ class _SplashScreenState extends ConsumerState<SplashPage> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Themes.darkColor,
+        color: Colors.white,
         image: const DecorationImage(
             image: AssetImage(ImageConst.splash), fit: BoxFit.fitHeight),
       ),

@@ -1,7 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.LiquidGalaxyProject.lg_gesture_and_voice_control">
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <queries>
+    <intent>
+        <action android:name="android.speech.RecognitionService" />
+    </intent>
+</queries>
    <application
-        android:label="lg_gesture_and_voice_control"
+        android:label="LG Gesture Voice Control"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

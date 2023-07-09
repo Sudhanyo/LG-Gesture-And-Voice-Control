@@ -3,7 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:lg_gesture_and_voice_control/pages/about.dart';
+import 'package:lg_gesture_and_voice_control/pages/help.dart';
 import 'package:lg_gesture_and_voice_control/pages/settings.dart';
+import 'package:lg_gesture_and_voice_control/pages/utilities.dart';
+import 'package:lg_gesture_and_voice_control/pages/voicepage.dart';
 
 import 'pages/mainpage.dart';
 import 'pages/splash.dart';
@@ -39,6 +43,7 @@ class _RoutesState extends State<Routes> {
     return LocalizationProvider(
       state: LocalizationProvider.of(context).state,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Liquid Galaxy Gesture & Voice Control',
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
@@ -52,6 +57,10 @@ class _RoutesState extends State<Routes> {
           '/': (context) => const SplashPage(),
           '/HomePage': (context) => const MainPage(),
           '/settings': (context) => const SettingsPage(),
+          '/help' :(context) => const HelpPage(),
+          '/voice' : (context) => SpeechScreen(),
+          '/about' : (context) => AboutPage(),
+          '/utilities' : (context) => UtilPage(),
         },
       ),
     );
