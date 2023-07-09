@@ -8,9 +8,7 @@ import '../KMLHandle/KML.dart';
 import '../connections/sshConnect.dart';
 import '../constants/constants.dart';
 import '../constants/images.dart';
-import '../constants/texts.dart';
 import '../providers/settingsProvider.dart';
-import '../utils/helper.dart';
 
 /// The SettingsPage() class is used to display the Menu for the LG Gesture & Voice Control app through which,
 /// Users can set up the app to connect with their LG rig.
@@ -24,7 +22,7 @@ class SettingsPage extends ConsumerStatefulWidget {
 
 class _SettingsState extends ConsumerState<SettingsPage> {
   final CameraPosition initialMapPosition = const CameraPosition(
-    target: LatLng(51.4769, 0.0),
+    target: LatLng(20.5937, 78.9629),
     zoom: 2,
   );
 
@@ -155,7 +153,8 @@ class _SettingsState extends ConsumerState<SettingsPage> {
                 SizedBox(height: 16.0),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
+                    backgroundColor:
+                        isConnectedToLg ? Colors.green : Colors.black,
                   ),
                   onPressed: () async {
                     if (!isConnectedToLg) {
@@ -173,7 +172,8 @@ class _SettingsState extends ConsumerState<SettingsPage> {
                           initialMapPosition.bearing);
                     } else {
                       await SSH(ref: ref).disconnect();
-                    };
+                    }
+                    ;
                   },
                   child: Text('Connect'),
                 ),
